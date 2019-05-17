@@ -36,8 +36,8 @@ public class ProductController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/product")
     @ResponseBody
-    public ProductDomain getProductByName(@RequestParam String name){
-        ProductDomain response = service.getProductByName(name);
+    public ProductDomain getProductByName(@RequestParam String name, @RequestParam String brand){
+        ProductDomain response = service.getProductByName(name, brand);
         return response;
     }
     //@Valid Para bautizar un dato extraño como válido.
