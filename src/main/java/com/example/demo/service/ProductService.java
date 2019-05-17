@@ -8,4 +8,6 @@ public interface ProductService {
     public List<ProductDomain> getProducts();
 
     public ProductDomain getProductById(long id);
+
+    public ProductDomain getProductByName(String name);
 }

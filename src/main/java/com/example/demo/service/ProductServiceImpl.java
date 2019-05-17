@@ -38,4 +38,11 @@ public class ProductServiceImpl implements ProductService{
         return domain;
     }
 
+    public ProductDomain getProductByName(String name){
+        ProductDomain domain = new ProductDomain();
+        ProductEntity entity = repository.getProductByName(name);
+        domain = facade.map(entity,ProductDomain.class);
+        return domain;
+    }
+
 }

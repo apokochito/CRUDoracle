@@ -6,4 +6,6 @@ import lombok.Data;
 public class ProductDomain {
     private long id;
     private String name;
+    private String brand;
+    private int quantity;
 }

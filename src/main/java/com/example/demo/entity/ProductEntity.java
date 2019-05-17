@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,16 +9,26 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "CLIENTS")
+@Table(name = "PRODUCTS")
 public class ProductEntity implements Serializable {
+    // "clients_seq" is Oracle sequence name.
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(sequenceName = "idSeq",
-            name = "ID", allocationSize = 1, initialValue = 1)
+    @Id @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid",
+    strategy = "uuid")
+    @NotNull
+    @Column(name = "ID")
     private long id;
 
     @NotNull
-    @Column(name= "NAME")
+    @Column(name = "NAME")
     private String name;
+
+    @NotNull
+    @Column(name = "BRAND")
+    private String brand;
+
+    @NotNull
+    @Column(name= "QUANTITY")
+    private int quantity;
 }

@@ -9,4 +9,6 @@ public interface ProductRepository {
     public List<ProductEntity> getProducts();
 
     public ProductEntity getProductById(long id);
+
+    public ProductEntity getProductByName(String name);
 }
