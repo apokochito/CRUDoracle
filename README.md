@@ -1,3 +1,3 @@
 # CRUDoracle
 
-CRUD service backend using Java language
+CRUD service backend using Java language and Oracle database
